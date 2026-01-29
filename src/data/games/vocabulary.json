@@ -1,0 +1,187 @@
+{
+  "matching": [
+    { "de": "das Haus", "tr": "ev" },
+    { "de": "die Schule", "tr": "okul" },
+    { "de": "der Tisch", "tr": "masa" },
+    { "de": "das Buch", "tr": "kitap" },
+    { "de": "der Stuhl", "tr": "sandalye" },
+    { "de": "die Tür", "tr": "kapı" },
+    { "de": "das Fenster", "tr": "pencere" },
+    { "de": "der Kaffee", "tr": "kahve" },
+    { "de": "das Wasser", "tr": "su" },
+    { "de": "der Apfel", "tr": "elma" },
+    { "de": "die Banane", "tr": "muz" },
+    { "de": "das Brot", "tr": "ekmek" },
+    { "de": "der Freund", "tr": "arkadaş (erkek)" },
+    { "de": "die Freundin", "tr": "arkadaş (kadın)" },
+    { "de": "die Familie", "tr": "aile" },
+    { "de": "der Vater", "tr": "baba" },
+    { "de": "die Mutter", "tr": "anne" },
+    { "de": "der Bruder", "tr": "erkek kardeş" },
+    { "de": "die Schwester", "tr": "kız kardeş" },
+    { "de": "das Kind", "tr": "çocuk" },
+    { "de": "der Beruf", "tr": "meslek" },
+    { "de": "die Arbeit", "tr": "iş" },
+    { "de": "der Arzt", "tr": "doktor" },
+    { "de": "die Ärztin", "tr": "doktor (kadın)" },
+    { "de": "der Lehrer", "tr": "öğretmen" },
+    { "de": "die Lehrerin", "tr": "öğretmen (kadın)" },
+    { "de": "der Student", "tr": "öğrenci (erkek)" },
+    { "de": "die Studentin", "tr": "öğrenci (kadın)" },
+    { "de": "das Auto", "tr": "araba" },
+    { "de": "der Bus", "tr": "otobüs" },
+    { "de": "der Zug", "tr": "tren" },
+    { "de": "das Fahrrad", "tr": "bisiklet" },
+    { "de": "der Bahnhof", "tr": "istasyon" },
+    { "de": "die Haltestelle", "tr": "durak" },
+    { "de": "die Fahrkarte", "tr": "bilet" },
+    { "de": "das Hotel", "tr": "otel" },
+    { "de": "das Zimmer", "tr": "oda" },
+    { "de": "die Reise", "tr": "seyahat" },
+    { "de": "der Urlaub", "tr": "tatil" },
+    { "de": "das Essen", "tr": "yemek" },
+    { "de": "das Frühstück", "tr": "kahvaltı" },
+    { "de": "das Mittagessen", "tr": "öğle yemeği" },
+    { "de": "das Abendessen", "tr": "akşam yemeği" },
+    { "de": "die Pizza", "tr": "pizza" },
+    { "de": "der Salat", "tr": "salata" },
+    { "de": "die Suppe", "tr": "çorba" },
+    { "de": "der Sport", "tr": "spor" },
+    { "de": "der Fußball", "tr": "futbol" },
+    { "de": "das Kino", "tr": "sinema" },
+    { "de": "der Film", "tr": "film" },
+    { "de": "die Musik", "tr": "müzik" },
+    { "de": "das Buch", "tr": "kitap" },
+    { "de": "die Zeitung", "tr": "gazete" },
+    { "de": "der Computer", "tr": "bilgisayar" },
+    { "de": "das Handy", "tr": "cep telefonu" },
+    { "de": "die E-Mail", "tr": "e-posta" },
+    { "de": "der Montag", "tr": "pazartesi" },
+    { "de": "der Dienstag", "tr": "salı" },
+    { "de": "der Mittwoch", "tr": "çarşamba" },
+    { "de": "der Donnerstag", "tr": "perşembe" },
+    { "de": "der Freitag", "tr": "cuma" },
+    { "de": "der Samstag", "tr": "cumartesi" },
+    { "de": "der Sonntag", "tr": "pazar" },
+    { "de": "das Wochenende", "tr": "hafta sonu" },
+    { "de": "der Januar", "tr": "ocak" },
+    { "de": "der Februar", "tr": "şubat" },
+    { "de": "der März", "tr": "mart" },
+    { "de": "der April", "tr": "nisan" },
+    { "de": "der Mai", "tr": "mayıs" },
+    { "de": "der Juni", "tr": "haziran" },
+    { "de": "der Juli", "tr": "temmuz" },
+    { "de": "der August", "tr": "ağustos" },
+    { "de": "der September", "tr": "eylül" },
+    { "de": "der Oktober", "tr": "ekim" },
+    { "de": "der November", "tr": "kasım" },
+    { "de": "der Dezember", "tr": "aralık" }
+  ],
+  "quiz": [
+    {
+      "question": "Wie sagt man 'ev' auf Deutsch?",
+      "options": ["das Haus", "die Schule", "der Tisch", "das Buch"],
+      "correct": 0
+    },
+    {
+      "question": "Wie sagt man 'okul' auf Deutsch?",
+      "options": ["das Haus", "die Schule", "der Tisch", "das Auto"],
+      "correct": 1
+    },
+    {
+      "question": "Was bedeutet 'der Freund'?",
+      "options": ["arkadaş (erkek)", "arkadaş (kadın)", "aile", "çocuk"],
+      "correct": 0
+    },
+    {
+      "question": "Was bedeutet 'die Mutter'?",
+      "options": ["baba", "anne", "erkek kardeş", "kız kardeş"],
+      "correct": 1
+    },
+    {
+      "question": "Wie sagt man 'kahve' auf Deutsch?",
+      "options": ["das Wasser", "der Kaffee", "der Tee", "die Milch"],
+      "correct": 1
+    },
+    {
+      "question": "Was bedeutet 'der Arzt'?",
+      "options": ["öğretmen", "doktor", "öğrenci", "mühendis"],
+      "correct": 1
+    },
+    {
+      "question": "Wie sagt man 'araba' auf Deutsch?",
+      "options": ["der Bus", "der Zug", "das Auto", "das Fahrrad"],
+      "correct": 2
+    },
+    {
+      "question": "Was bedeutet 'das Frühstück'?",
+      "options": ["öğle yemeği", "akşam yemeği", "kahvaltı", "atıştırmalık"],
+      "correct": 2
+    },
+    {
+      "question": "Wie sagt man 'pazartesi' auf Deutsch?",
+      "options": ["der Dienstag", "der Montag", "der Mittwoch", "der Donnerstag"],
+      "correct": 1
+    },
+    {
+      "question": "Was bedeutet 'der Urlaub'?",
+      "options": ["iş", "tatil", "okul", "ev"],
+      "correct": 1
+    },
+    {
+      "question": "Wie sagt man 'futbol' auf Deutsch?",
+      "options": ["der Sport", "der Fußball", "das Tennis", "der Basketball"],
+      "correct": 1
+    },
+    {
+      "question": "Was bedeutet 'die E-Mail'?",
+      "options": ["telefon", "mektup", "e-posta", "mesaj"],
+      "correct": 2
+    },
+    {
+      "question": "Wie sagt man 'sinema' auf Deutsch?",
+      "options": ["der Film", "das Kino", "die Musik", "das Buch"],
+      "correct": 1
+    },
+    {
+      "question": "Was bedeutet 'der Bahnhof'?",
+      "options": ["havaalanı", "istasyon", "durak", "otobüs"],
+      "correct": 1
+    },
+    {
+      "question": "Wie sagt man 'tatil' auf Deutsch?",
+      "options": ["die Arbeit", "der Urlaub", "die Schule", "das Büro"],
+      "correct": 1
+    }
+  ],
+  "wordSearch": {
+    "words": [
+      { "word": "HAUS", "tr": "ev" },
+      { "word": "SCHULE", "tr": "okul" },
+      { "word": "BUCH", "tr": "kitap" },
+      { "word": "TISCH", "tr": "masa" },
+      { "word": "STUHL", "tr": "sandalye" },
+      { "word": "FREUND", "tr": "arkadaş" },
+      { "word": "FAMILIE", "tr": "aile" },
+      { "word": "VATER", "tr": "baba" },
+      { "word": "MUTTER", "tr": "anne" },
+      { "word": "KAFFEE", "tr": "kahve" },
+      { "word": "WASSER", "tr": "su" },
+      { "word": "AUTO", "tr": "araba" }
+    ],
+    "grid": [
+      ["H", "A", "U", "S", "X", "Y", "Z", "A"],
+      ["C", "H", "U", "L", "E", "B", "C", "D"],
+      ["B", "U", "C", "H", "E", "F", "G", "H"],
+      ["T", "I", "S", "C", "H", "I", "J", "K"],
+      ["S", "T", "U", "H", "L", "M", "N", "O"],
+      ["F", "R", "E", "U", "N", "D", "P", "Q"],
+      ["F", "A", "M", "I", "L", "I", "E", "R"],
+      ["V", "A", "T", "E", "R", "S", "T", "U"],
+      ["M", "U", "T", "T", "E", "R", "V", "W"],
+      ["K", "A", "F", "F", "E", "E", "X", "Y"],
+      ["W", "A", "S", "S", "E", "R", "Z", "A"],
+      ["A", "U", "T", "O", "B", "C", "D", "E"]
+    ]
+  }
+}

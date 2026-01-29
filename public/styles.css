@@ -338,6 +338,72 @@ button {
   background: #e5e7eb;
 }
 
+/* Kaynaklar sayfası */
+.resource-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resource-links li {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.resource-links li:last-child {
+  border-bottom: none;
+}
+
+.resource-links a {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.resource-links a:hover {
+  text-decoration: underline;
+}
+
+.resource-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+/* Kelime bölümleri ve sonraki adım */
+.vocab-section {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.vocab-section:first-of-type {
+  border-top: none;
+}
+
+.vocab-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vocab-list li {
+  padding: 0.2rem 0;
+  border-bottom: none;
+}
+
+.next-step {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.75rem;
+  color: #064e3b;
+}
+
+.next-step a {
+  font-weight: 600;
+  color: #16a34a;
+}
+
 /* Responsiveness */
 @media (max-width: 640px) {
   .header-inner {

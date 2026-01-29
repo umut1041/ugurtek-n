@@ -1,0 +1,194 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import vpData from "../../data/vocabulary/verben-praepositionen.json";
+
+const { meta, entries } = vpData;
+---
+
+<MainLayout
+  title="Verben mit Präpositionen"
+  description="Feste Verbindungen: Fiil + edat listesi, Dativ ve Akkusativ kullanımları ile örnek cümleler."
+>
+  <section>
+    <p class="breadcrumb">
+      <a href="/vocabulary">Kelime & Kalıplar</a> → Verben mit Präpositionen
+    </p>
+    <h1>Feste Verbindungen: Verben mit Präpositionen</h1>
+    <p class="vp-meta">
+      <strong>{meta.titleTr}</strong>. {meta.note}
+    </p>
+  </section>
+
+  <section>
+    <p class="vp-legend">
+      <strong>Kasus:</strong> <span class="kasus-d">D = Dativ</span>, <span class="kasus-a">A = Akkusativ</span>
+    </p>
+    <label for="vp-search" class="visually-hidden">Fiil veya örnek cümle içinde ara</label>
+    <input
+      id="vp-search"
+      type="search"
+      class="vp-search"
+      placeholder="Fiil veya örnek cümle içinde ara …"
+      autocomplete="off"
+    />
+    <div class="vp-table-wrap">
+      <table class="vp-table">
+        <thead>
+          <tr>
+            <th>Verb + Präposition</th>
+            <th class="vp-th-kasus">Kasus</th>
+            <th>Beispiel</th>
+          </tr>
+        </thead>
+        <tbody id="vp-tbody">
+          {entries.map((entry: { verb: string; kasus: string; beispiel: string }) => (
+            <tr
+              class="vp-row"
+              data-verb={entry.verb.toLowerCase()}
+              data-beispiel={(entry.beispiel || "").toLowerCase()}
+            >
+              <td class="vp-verb"><strong>{entry.verb}</strong></td>
+              <td class="vp-kasus">{entry.kasus}</td>
+              <td class="vp-beispiel">{entry.beispiel}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="vp-count">
+      Toplam <strong>{entries.length}</strong> fiil + edat bağlantısı.
+    </p>
+  </section>
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      <a href="/vocabulary">Kelime sayfasına</a> dön, <a href="/vocabulary/goethe">Goethe Kelime Listesi</a>ne
+      bak veya <a href="/grammar">Gramer</a> sayfasında Präpositionen konusunu tekrarla.
+    </p>
+  </section>
+
+  <script>
+    (function () {
+      const search = document.getElementById("vp-search") as HTMLInputElement;
+      const tbody = document.getElementById("vp-tbody");
+      if (!search || !tbody) return;
+
+      const rows = tbody.querySelectorAll(".vp-row");
+
+      function filter() {
+        const q = (search.value || "").trim().toLowerCase();
+        if (!q) {
+          rows.forEach((el) => (el as HTMLElement).style.display = "");
+          return;
+        }
+        rows.forEach((el) => {
+          const verb = (el.getAttribute("data-verb") || "").includes(q);
+          const beispiel = (el.getAttribute("data-beispiel") || "").includes(q);
+          (el as HTMLElement).style.display = verb || beispiel ? "" : "none";
+        });
+      }
+
+      search.addEventListener("input", filter);
+      search.addEventListener("change", filter);
+    })();
+  </script>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .breadcrumb a:hover {
+    color: #0f172a;
+  }
+  .vp-meta {
+    margin-top: 0.5rem;
+    color: #334155;
+  }
+  .vp-legend {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #475569;
+  }
+  .kasus-d { color: #0d9488; font-weight: 600; }
+  .kasus-a { color: #7c3aed; font-weight: 600; }
+  .vp-search {
+    width: 100%;
+    max-width: 28rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  .vp-search:focus {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+  }
+  .vp-table-wrap {
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 0.75rem;
+  }
+  .vp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .vp-table th,
+  .vp-table td {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .vp-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .vp-th-kasus {
+    width: 5rem;
+    text-align: center;
+  }
+  .vp-table tbody tr:hover {
+    background: #f8fafc;
+  }
+  .vp-verb {
+    color: #0f172a;
+    white-space: nowrap;
+  }
+  .vp-kasus {
+    text-align: center;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .vp-beispiel {
+    color: #475569;
+  }
+  .vp-count {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  @media (max-width: 640px) {
+    .vp-table th,
+    .vp-table td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    .vp-verb { white-space: normal; }
+  }
+</style>

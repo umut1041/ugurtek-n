@@ -1,0 +1,168 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import QuizGame from "../../components/QuizGame";
+import vocabData from "../../data/games/vocabulary.json";
+---
+
+<MainLayout
+  title="Almanca Quiz Oyunu"
+  description="Almanca-Türkçe çeviri soruları ile bilgini test et."
+>
+  <section>
+    <p class="breadcrumb">
+      <a href="/games">Oyunlar</a> → Çoktan Seçmeli Quiz
+    </p>
+    <h1>❓ Çoktan Seçmeli Quiz</h1>
+    <p>
+      Almanca-Türkçe çeviri sorularını cevapla. Her doğru cevap puan kazandırır!
+    </p>
+  </section>
+
+  <section>
+    <QuizGame client:load questions={vocabData.quiz} />
+  </section>
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      <a href="/games">Diğer oyunlara</a> bak veya <a href="/vocabulary">Kelime & Kalıplar</a> sayfasından
+      yeni kelimeler öğren.
+    </p>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .breadcrumb a:hover {
+    color: #0f172a;
+  }
+  .quiz-game {
+    margin: 1.5rem 0;
+  }
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+  }
+  .quiz-progress {
+    font-weight: 600;
+    color: #334155;
+  }
+  .quiz-score {
+    font-weight: 600;
+    color: #0d9488;
+  }
+  .quiz-question h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+  .quiz-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .quiz-options li {
+    margin-bottom: 0.5rem;
+  }
+  .quiz-option {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .quiz-option:hover:not(:disabled) {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+  }
+  .quiz-option.selected {
+    background: #dbeafe;
+    border-color: #3b82f6;
+  }
+  .quiz-option.correct {
+    background: #d1fae5;
+    border-color: #22c55e;
+    color: #065f46;
+  }
+  .quiz-option.incorrect {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+  }
+  .quiz-option:disabled {
+    cursor: not-allowed;
+  }
+  .feedback-icon {
+    margin-left: 0.5rem;
+    font-weight: bold;
+  }
+  .quiz-feedback {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+  }
+  .feedback-correct {
+    color: #16a34a;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .feedback-incorrect {
+    color: #dc2626;
+    margin-bottom: 0.75rem;
+  }
+  .next-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .next-btn:hover {
+    background: #16a34a;
+  }
+  .quiz-result {
+    text-align: center;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+  }
+  .quiz-result h2 {
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+  .result-score {
+    margin: 1.5rem 0;
+  }
+  .score-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0d9488;
+    margin: 0;
+  }
+  .score-percentage {
+    font-size: 1.5rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+  }
+  .result-message {
+    font-size: 1.1rem;
+    color: #334155;
+    margin: 1rem 0;
+  }
+</style>

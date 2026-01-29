@@ -1,32 +1,217 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import unitsData from "../../data/vocabulary/units.json";
+
+type WordEntry = { de: string; tr: string };
+type Unit = (typeof unitsData.units)[number] & { words?: WordEntry[]; phrases?: WordEntry[] };
+const units: Unit[] = unitsData.units as Unit[];
+
+const unitIndex = (id: string) => units.findIndex((u) => u.id === id) + 1;
+
+const defaultVocab: Record<string, { words: WordEntry[]; phrases: WordEntry[] }> = {
+  ankommen: {
+    words: [
+      { de: "ankommen", tr: "varmak" },
+      { de: "der Bahnhof / der Flughafen", tr: "istasyon / havalimanı" },
+      { de: "wo ist …? / wie komme ich zu …?", tr: "… nerede? / …'a nasıl giderim?" },
+    ],
+    phrases: [],
+  },
+  daheim: {
+    words: [
+      { de: "die Wohnung / das Zimmer", tr: "daire / oda" },
+      { de: "die Küche / das Badezimmer", tr: "mutfak / banyo" },
+      { de: "die Familie / der Vater / die Mutter", tr: "aile / baba / anne" },
+      { de: "der Bruder / die Schwester / die Großeltern", tr: "erkek kardeş / kız kardeş / büyükanneler-büyükbabalar" },
+    ],
+    phrases: [
+      { de: "Ich wohne in … / Meine Familie hat … Personen. / Ich habe einen Bruder / eine Schwester.", tr: "" },
+    ],
+  },
+  "essen-trinken": {
+    words: [
+      { de: "das Essen / das Getränk", tr: "yemek / içecek" },
+      { de: "frühstücken / zu Mittag essen", tr: "kahvaltı yapmak / öğle yemeği yemek" },
+      { de: "Ich hätte gern … / Die Rechnung, bitte.", tr: "… istiyorum. / Hesap lütfen." },
+    ],
+    phrases: [],
+  },
+  arbeitswelt: {
+    words: [
+      { de: "der Beruf / die Arbeit / die Firma", tr: "meslek / iş / şirket" },
+      { de: "der Kurs / lernen / arbeiten", tr: "kurs / öğrenmek / çalışmak" },
+      { de: "von … bis …", tr: "…-den …-e kadar" },
+    ],
+    phrases: [
+      { de: "Ich bin Schüler / Student. / Ich arbeite bei … / Ich möchte einen Deutschkurs machen.", tr: "" },
+    ],
+  },
+  "sport-fitness": {
+    words: [
+      { de: "Sport machen / Fußball spielen", tr: "spor yapmak / futbol oynamak" },
+      { de: "gesund / fit", tr: "sağlıklı / formda" },
+    ],
+    phrases: [],
+  },
+  "schule-ausbildung": {
+    words: [
+      { de: "die Schule / der Unterricht / die Prüfung", tr: "okul / ders / sınav" },
+      { de: "der Lehrer / die Lehrerin / der Student", tr: "öğretmen / öğrenci" },
+    ],
+    phrases: [],
+  },
+  "feste-geschenke": {
+    words: [
+      { de: "das Fest / das Geschenk / Geburtstag", tr: "kutlama / hediye / doğum günü" },
+      { de: "Herzlichen Glückwunsch! / Ich lade dich ein.", tr: "Tebrikler! / Seni davet ediyorum." },
+    ],
+    phrases: [],
+  },
+  "am-wochenende": {
+    words: [
+      { de: "das Wochenende / die Freizeit", tr: "hafta sonu / boş zaman" },
+      { de: "Was machst du am Wochenende? / Ich treffe Freunde.", tr: "" },
+    ],
+    phrases: [],
+  },
+  "meine-sachen": {
+    words: [
+      { de: "mein / meine / meine Sachen", tr: "benim (eşyalarım)" },
+      { de: "verlieren / finden / kaufen", tr: "kaybetmek / bulmak / satın almak" },
+    ],
+    phrases: [],
+  },
+  kommunikation: {
+    words: [
+      { de: "anrufen / die E-Mail / die Nachricht", tr: "aramak / e-posta / mesaj" },
+      { de: "Kann ich … sprechen? / Ich schreibe dir eine E-Mail.", tr: "" },
+    ],
+    phrases: [],
+  },
+  unterwegs: {
+    words: [
+      { de: "der Bus / die Bahn / das Fahrrad", tr: "otobüs / tren / bisiklet" },
+      { de: "die Fahrkarte / die Haltestelle", tr: "bilet / durak" },
+    ],
+    phrases: [],
+  },
+  reisen: {
+    words: [
+      { de: "reisen / der Urlaub / das Hotel", tr: "seyahat etmek / tatil / otel" },
+      { de: "Ich möchte eine Reservierung machen. / Ein Zimmer für eine Nacht.", tr: "" },
+    ],
+    phrases: [],
+  },
+  "auf-der-bank": {
+    words: [
+      { de: "die Bank / das Konto / das Geld", tr: "banka / hesap / para" },
+      { de: "einzahlen / abheben", tr: "yatırmak / çekmek" },
+    ],
+    phrases: [],
+  },
+  lebensstationen: {
+    words: [
+      { de: "geboren werden / heiraten / der Geburtstag", tr: "doğmak / evlenmek / doğum günü" },
+      { de: "früher / später / in der Zukunft", tr: "eskiden / sonra / gelecekte" },
+    ],
+    phrases: [],
+  },
+};
+
+function getWords(unit: Unit): WordEntry[] {
+  return unit.words && unit.words.length > 0 ? unit.words : (defaultVocab[unit.id]?.words ?? []);
+}
+function getPhrases(unit: Unit): WordEntry[] {
+  return unit.phrases && unit.phrases.length > 0 ? unit.phrases : (defaultVocab[unit.id]?.phrases ?? []);
+}
 ---
 
 <MainLayout
   title="A2 Kelime & Kalıplar"
-  description="Goethe A2 seviyesi için tema bazlı kelime listeleri ve hazır kalıplar."
+  description="Goethe A2 seviyesi için 14 ünite tema bazlı kelime listeleri ve hazır kalıplar."
 >
   <section>
-    <h1>A2 Kelime & Kalıplar</h1>
+    <h1>A2 Kelime &amp; Kalıplar</h1>
     <p>
       A2 sınavında başarılı olabilmek için günlük hayatın farklı alanlarından
-      yeterli kelime ve ifade biriktirmen gerekir.
+      yeterli kelime ve ifade biriktirmen gerekir. Aşağıda <strong>14 ünite</strong> tema
+      bazlı listelenmiştir.
+    </p>
+    <h2>Bu sayfada ne öğreneceksin?</h2>
+    <ul>
+      <li>14 ünite: Ankommen, Daheim, Essen und trinken, Arbeitswelt, Sport und Fitness, Schule und Ausbildung, Feste und Geschenke, Am Wochenende, Meine Sachen, Kommunikation, Unterwegs, Reisen, Auf der Bank, Lebensstationen</li>
+      <li>Her ünite için tema kelimeleri ve Schreiben/Sprechen'de kullanabileceğin kalıplar</li>
+    </ul>
+    <p class="goethe-cta">
+      <a href="/vocabulary/goethe" class="card goethe-link">📋 <strong>Goethe Kelime Listesi (A2)</strong> — Resmî sınav sözcük listesi (Wortgruppen + alfabetik)</a>
+      <a href="/vocabulary/verben-praepositionen" class="card goethe-link">🔗 <strong>Verben mit Präpositionen</strong> — Fiil + edat (D/A) ve örnek cümleler</a>
+      <a href="/vocabulary/reflexive-verben" class="card goethe-link">🔄 <strong>Reflexive Verben</strong> — Dönüşlü fiiller ve örnek cümleler</a>
     </p>
   </section>
 
-  <section class="cards-grid">
-    <a class="card" href="#ev-aile">
-      <h3>Ev &amp; Aile</h3>
-      <p>Evde kullanılan eşyalar ve aile ilişkileri ile ilgili kelimeler.</p>
-    </a>
-    <a class="card" href="#is-meslek">
-      <h3>İş &amp; Meslek</h3>
-      <p>İş hayatı, meslekler ve ofis ortamı ile ilgili kelimeler.</p>
-    </a>
-    <a class="card" href="#saglik">
-      <h3>Sağlık</h3>
-      <p>Doktorda, eczanede ve hastanede kullanılan kelime ve kalıplar.</p>
-    </a>
+  <section>
+    <h2>14 Ünite – Konu Listesi</h2>
+    <div class="cards-grid units-grid">
+      {units.map((unit) => (
+        <a class="card" href={`#${unit.id}`}>
+          <h3>{unit.title}</h3>
+          <p>{unit.titleTr} – {unit.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {units.map((unit) => {
+    const words = getWords(unit);
+    const phrases = getPhrases(unit);
+    const num = unitIndex(unit.id);
+    return (
+      <section id={unit.id} class="vocab-section">
+        <h2>{num} – {unit.title}</h2>
+        <p class="unit-desc">{unit.titleTr} – {unit.description}</p>
+        {words.length > 0 && (
+          <>
+            <h3>{phrases.length > 0 ? "Kelimeler" : "Kilit kelimeler"}</h3>
+            <ul class="vocab-list">
+              {words.map((w) => (
+                <li><strong>{w.de}</strong>{w.tr ? ` – ${w.tr}` : ""}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        {phrases.length > 0 && (
+          <>
+            <h3>Kalıplar</h3>
+            <ul class="vocab-list">
+              {phrases.map((p) => (
+                <li><strong>{p.de}</strong>{p.tr ? ` – ${p.tr}` : ""}</li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    );
+  })}
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      Kelimeleri cümle içinde kullanmak için <a href="/grammar">Gramer</a> sayfasındaki
+      Perfekt ve Modalverb örneklerini tekrar et; sonra <a href="/exam/lesen">Lesen</a> ile
+      okuma pratiği yap.
+    </p>
   </section>
 </MainLayout>
 
+<style>
+  .goethe-cta {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .goethe-cta .goethe-link {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+  }
+</style>

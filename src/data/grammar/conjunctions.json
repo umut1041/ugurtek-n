@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "title": "Bağlaçlar (Konnektoren)",
+    "titleDe": "Konjunktionen und Konnektoren",
+    "note": "Yan cümle bağlaçları (dass, ob, weil, …) cümlede fiili sona götürür. Sıralı bağlaçlar (und, aber, denn) fiili ikinci sırada tutar."
+  },
+  "sections": [
+    {
+      "id": "dass",
+      "name": "dass",
+      "nameTr": "ki, -dığını",
+      "type": "nebensatz",
+      "usage": "Haber, düşünce veya duygu aktarır. Yan cümlede fiil sonda.",
+      "examples": [
+        "Ich glaube, <strong>dass</strong> er morgen <strong>kommt</strong>.",
+        "Sie sagt, <strong>dass</strong> sie keine Zeit <strong>hat</strong>.",
+        "Es tut mir leid, <strong>dass</strong> ich zu spät <strong>bin</strong>.",
+        "Ich finde es gut, <strong>dass</strong> du Deutsch <strong>lernst</strong>.",
+        "Er weiß, <strong>dass</strong> die Prüfung schwer <strong>ist</strong>.",
+        "Wir hoffen, <strong>dass</strong> das Wetter schön <strong>wird</strong>.",
+        "Die Mutter sagt, <strong>dass</strong> die Kinder schlafen <strong>sollen</strong>.",
+        "Ich habe gehört, <strong>dass</strong> du umziehst."
+      ]
+    },
+    {
+      "id": "ob",
+      "name": "ob",
+      "nameTr": "… mı, … mi (evet/hayır sorusu)",
+      "type": "nebensatz",
+      "usage": "Evet/hayır ile cevaplanan dolaylı sorularda. Yan cümlede fiil sonda.",
+      "examples": [
+        "Ich weiß nicht, <strong>ob</strong> er heute <strong>kommt</strong>.",
+        "Kannst du mich sagen, <strong>ob</strong> der Zug pünktlich <strong>ist</strong>?",
+        "Sie fragt, <strong>ob</strong> wir mitfahren <strong>wollen</strong>.",
+        "Ich frage mich, <strong>ob</strong> das stimmt.",
+        "Weißt du, <strong>ob</strong> das Geschäft noch <strong>offen hat</strong>?",
+        "Er fragt, <strong>ob</strong> ich Zeit <strong>habe</strong>.",
+        "Es ist unklar, <strong>ob</strong> wir gewinnen <strong>werden</strong>.",
+        "Ich bin nicht sicher, <strong>ob</strong> ich kommen <strong>kann</strong>."
+      ]
+    },
+    {
+      "id": "weil",
+      "name": "weil",
+      "nameTr": "çünkü",
+      "type": "nebensatz",
+      "usage": "Sebep bildirir. Yan cümlede fiil sonda. Cevap olarak „Warum?“ sorusuna kullanılır.",
+      "examples": [
+        "Ich lerne Deutsch, <strong>weil</strong> ich in Deutschland <strong>arbeiten will</strong>.",
+        "Sie bleibt zu Hause, <strong>weil</strong> sie krank <strong>ist</strong>.",
+        "Er kommt nicht, <strong>weil</strong> er keine Zeit <strong>hat</strong>.",
+        "Wir gehen ins Kino, <strong>weil</strong> der Film gut <strong>ist</strong>.",
+        "<strong>Weil</strong> es regnet, nehmen wir den Schirm <strong>mit</strong>.",
+        "Sie isst nichts, <strong>weil</strong> sie keinen Hunger <strong>hat</strong>.",
+        "Ich rufe dich an, <strong>weil</strong> ich eine Frage <strong>habe</strong>.",
+        "Das Kind weint, <strong>weil</strong> es müde <strong>ist</strong>."
+      ]
+    },
+    {
+      "id": "wenn",
+      "name": "wenn",
+      "nameTr": "eğer; …-dığında / her …-dığında",
+      "type": "nebensatz",
+      "usage": "Koşul (eğer) veya tekrarlayan zaman (her …-dığında). Yan cümlede fiil sonda.",
+      "examples": [
+        "<strong>Wenn</strong> es regnet, bleibe ich zu Hause.",
+        "<strong>Wenn</strong> du Zeit hast, ruf mich an.",
+        "Ich freue mich, <strong>wenn</strong> du kommst.",
+        "<strong>Wenn</strong> ich müde bin, gehe ich früh schlafen.",
+        "Was machst du, <strong>wenn</strong> du frei hast?",
+        "<strong>Wenn</strong> ich in Berlin bin, besuche ich immer das Museum.",
+        "Sie isst Eis, <strong>wenn</strong> es heiß ist.",
+        "Bitte sag Bescheid, <strong>wenn</strong> du ankommst."
+      ]
+    },
+    {
+      "id": "als",
+      "name": "als",
+      "nameTr": "…-dığında (geçmişte bir kez)",
+      "type": "nebensatz",
+      "usage": "Geçmişte tek seferlik bir olay. „wenn“ geçmişte = „als“. Yan cümlede fiil sonda.",
+      "examples": [
+        "<strong>Als</strong> ich Kind war, wohnte ich in der Türkei.",
+        "<strong>Als</strong> er ankam, war ich nicht zu Hause.",
+        "Was hast du gemacht, <strong>als</strong> du in Berlin warst?",
+        "<strong>Als</strong> die Sonne unterging, gingen wir nach Hause.",
+        "Sie hat geweint, <strong>als</strong> sie die Nachricht hörte.",
+        "<strong>Als</strong> ich sie traf, war sie noch Studentin.",
+        "Er war überrascht, <strong>als</strong> er mich sah."
+      ]
+    },
+    {
+      "id": "obwohl",
+      "name": "obwohl",
+      "nameTr": "rağmen, -e rağmen",
+      "type": "nebensatz",
+      "usage": "Zıtlık / taviz. Yan cümlede fiil sonda.",
+      "examples": [
+        "Er geht zur Arbeit, <strong>obwohl</strong> er krank <strong>ist</strong>.",
+        "<strong>Obwohl</strong> es regnet, spielen die Kinder draußen.",
+        "Sie hat bestanden, <strong>obwohl</strong> sie wenig gelernt <strong>hat</strong>.",
+        "Ich mag ihn, <strong>obwohl</strong> er oft zu spät <strong>kommt</strong>.",
+        "<strong>Obwohl</strong> der Film lang war, war er spannend.",
+        "Sie bleibt ruhig, <strong>obwohl</strong> sie Angst <strong>hat</strong>.",
+        "Wir fahren mit dem Rad, <strong>obwohl</strong> es kalt <strong>ist</strong>."
+      ]
+    },
+    {
+      "id": "damit",
+      "name": "damit",
+      "nameTr": "böylece, …-mesi için",
+      "type": "nebensatz",
+      "usage": "Amaç. Yan cümlede fiil sonda; çoğu zaman Modalverb (können, sollen) kullanılır.",
+      "examples": [
+        "Ich lerne viel, <strong>damit</strong> ich die Prüfung <strong>bestehe</strong>.",
+        "Sie spart Geld, <strong>damit</strong> sie reisen <strong>kann</strong>.",
+        "Sprich laut, <strong>damit</strong> alle dich <strong>hören</strong>.",
+        "Er schreibt eine Liste, <strong>damit</strong> er nichts <strong>vergisst</strong>.",
+        "Wir gehen früher, <strong>damit</strong> wir einen Platz <strong>bekommen</strong>.",
+        "Sie macht Sport, <strong>damit</strong> sie gesund <strong>bleibt</strong>.",
+        "Ich rufe an, <strong>damit</strong> du Bescheid <strong>weißt</strong>."
+      ]
+    },
+    {
+      "id": "sodass",
+      "name": "sodass / so dass",
+      "nameTr": "öyle ki, -ecek kadar",
+      "type": "nebensatz",
+      "usage": "Sonuç. Ana cümledeki eylem, yan cümledeki duruma yol açar. Fiil sonda.",
+      "examples": [
+        "Es regnet stark, <strong>sodass</strong> wir zu Hause <strong>bleiben</strong>.",
+        "Der Film war langweilig, <strong>so dass</strong> viele gegangen <strong>sind</strong>.",
+        "Sie hat viel gelernt, <strong>sodass</strong> sie bestanden <strong>hat</strong>.",
+        "Er spricht leise, <strong>sodass</strong> ich ihn kaum <strong>höre</strong>.",
+        "Das Kind war müde, <strong>sodass</strong> es sofort <strong>eingeschlafen ist</strong>.",
+        "Die Aufgabe war schwer, <strong>so dass</strong> ich Hilfe <strong>brauchte</strong>."
+      ]
+    },
+    {
+      "id": "nachdem",
+      "name": "nachdem",
+      "nameTr": "…-den sonra",
+      "type": "nebensatz",
+      "usage": "Zaman sırası: önce yan cümle, sonra ana cümle. Yan cümlede genelde Perfekt.",
+      "examples": [
+        "<strong>Nachdem</strong> ich gegessen habe, trinke ich Kaffee.",
+        "<strong>Nachdem</strong> der Film zu Ende war, gingen wir nach Hause.",
+        "Er ruft an, <strong>nachdem</strong> er angekommen <strong>ist</strong>.",
+        "<strong>Nachdem</strong> sie die Prüfung bestanden hatte, feierte sie.",
+        "Was machst du, <strong>nachdem</strong> du aufstehst?",
+        "<strong>Nachdem</strong> wir uns getroffen hatten, gingen wir ins Café."
+      ]
+    },
+    {
+      "id": "bevor",
+      "name": "bevor",
+      "nameTr": "…-meden önce",
+      "type": "nebensatz",
+      "usage": "Önce yan cümle (bevor …), sonra ana cümle. Fiil sonda.",
+      "examples": [
+        "Wasch dir die Hände, <strong>bevor</strong> du isst.",
+        "<strong>Bevor</strong> ich schlafe, lese ich noch ein bisschen.",
+        "Ruf mich an, <strong>bevor</strong> du kommst.",
+        "<strong>Bevor</strong> wir gehen, müssen wir die Tür abschließen.",
+        "Sie hat gegessen, <strong>bevor</strong> sie zur Arbeit <strong>ging</strong>.",
+        "Lies den Text, <strong>bevor</strong> du die Fragen <strong>beantwortest</strong>."
+      ]
+    },
+    {
+      "id": "bis",
+      "name": "bis",
+      "nameTr": "…-e kadar",
+      "type": "nebensatz",
+      "usage": "Zaman veya eylem sınırı. Yan cümlede fiil sonda.",
+      "examples": [
+        "Ich warte, <strong>bis</strong> du kommst.",
+        "Bleib hier, <strong>bis</strong> ich zurück bin.",
+        "Er arbeitet, <strong>bis</strong> es dunkel wird.",
+        "Wir bleiben, <strong>bis</strong> der Film zu Ende ist.",
+        "Sie hat gewartet, <strong>bis</strong> der Bus kam.",
+        "Ich bleibe im Bett, <strong>bis</strong> der Wecker klingelt."
+      ]
+    },
+    {
+      "id": "seit",
+      "name": "seit",
+      "nameTr": "…-den beri",
+      "type": "nebensatz",
+      "usage": "Başlangıç zamanı. „Seit“ + isim/ tarih veya „seitdem“ + yan cümle. Yan cümlede fiil sonda.",
+      "examples": [
+        "Ich wohne <strong>seit</strong> drei Jahren in Berlin.",
+        "<strong>Seit</strong> gestern bin ich krank.",
+        "Er lernt Deutsch, <strong>seit</strong> er in Deutschland ist.",
+        "Wir kennen uns <strong>seit</strong> 2020.",
+        "Seitdem ich hier wohne, fahre ich mit dem Rad.",
+        "Sie arbeitet hier, <strong>seit</strong> sie die Ausbildung <strong>abgeschlossen hat</strong>."
+      ]
+    },
+    {
+      "id": "waehrend",
+      "name": "während",
+      "nameTr": "…-ırken, … sırasında",
+      "type": "nebensatz",
+      "usage": "Aynı anda olan iki eylem. Yan cümlede fiil sonda.",
+      "examples": [
+        "<strong>Während</strong> ich koche, höre ich Musik.",
+        "Er liest, <strong>während</strong> er im Zug <strong>sitzt</strong>.",
+        "<strong>Während</strong> die Kinder schlafen, räume ich auf.",
+        "Bitte sei leise, <strong>während</strong> ich telefoniere.",
+        "Während wir warteten, hat es angefangen zu regnen.",
+        "Sie arbeitet, <strong>während</strong> die Kinder in der Schule <strong>sind</strong>."
+      ]
+    },
+    {
+      "id": "und",
+      "name": "und",
+      "nameTr": "ve",
+      "type": "hauptsatz",
+      "usage": "Sıralı bağlaç. İki ana cümleyi veya öğeyi bağlar; fiil ikinci sırada kalır.",
+      "examples": [
+        "Ich trinke Kaffee <strong>und</strong> du trinkst Tee.",
+        "Er kommt heute <strong>und</strong> wir gehen zusammen essen.",
+        "Sie lernt Deutsch <strong>und</strong> sie arbeitet halbtags.",
+        "Wir haben Brot <strong>und</strong> Käse gekauft.",
+        "Ich bin müde <strong>und</strong> ich gehe schlafen.",
+        "Das Kind weint <strong>und</strong> die Mutter tröstet es.",
+        "Er öffnet die Tür <strong>und</strong> geht rein."
+      ]
+    },
+    {
+      "id": "oder",
+      "name": "oder",
+      "nameTr": "veya",
+      "type": "hauptsatz",
+      "usage": "Seçenek. İki olasılığı bağlar; fiil ikinci sırada kalır.",
+      "examples": [
+        "Möchtest du Kaffee <strong>oder</strong> Tee?",
+        "Wir fahren mit dem Bus <strong>oder</strong> wir gehen zu Fuß.",
+        "Ist das richtig <strong>oder</strong> falsch?",
+        "Kommst du heute <strong>oder</strong> morgen?",
+        "Soll ich dich anrufen <strong>oder</strong> schreibst du mir?",
+        "Er bleibt zu Hause <strong>oder</strong> er geht ins Kino."
+      ]
+    },
+    {
+      "id": "aber",
+      "name": "aber",
+      "nameTr": "ama, fakat",
+      "type": "hauptsatz",
+      "usage": "Zıtlık. İki cümleyi karşılaştırır; fiil ikinci sırada kalır.",
+      "examples": [
+        "Ich möchte kommen, <strong>aber</strong> ich habe keine Zeit.",
+        "Er ist klein, <strong>aber</strong> er ist sehr stark.",
+        "Das Buch ist teuer, <strong>aber</strong> es ist gut.",
+        "Sie hat wenig Zeit, <strong>aber</strong> sie hilft mir.",
+        "Es regnet, <strong>aber</strong> wir gehen trotzdem raus.",
+        "Ich bin müde, <strong>aber</strong> ich muss noch arbeiten.",
+        "Der Film war lang, <strong>aber</strong> nicht langweilig."
+      ]
+    },
+    {
+      "id": "denn",
+      "name": "denn",
+      "nameTr": "çünkü (ana cümle sırası)",
+      "type": "hauptsatz",
+      "usage": "Sebep; „weil“ gibi ama fiil ikinci sırada kalır (yan cümle değil).",
+      "examples": [
+        "Ich bleibe zu Hause, <strong>denn</strong> ich bin krank.",
+        "Sie nimmt den Bus, <strong>denn</strong> sie hat kein Auto.",
+        "Er isst nichts, <strong>denn</strong> er hat keinen Hunger.",
+        "Wir gehen früh, <strong>denn</strong> der Film beginnt um 8 Uhr.",
+        "Ich rufe dich an, <strong>denn</strong> ich habe eine Frage.",
+        "Sie lacht, <strong>denn</strong> der Witz war lustig.",
+        "Er kommt nicht, <strong>denn</strong> er muss arbeiten."
+      ]
+    },
+    {
+      "id": "sondern",
+      "name": "sondern",
+      "nameTr": "aksine, bilakis (nein’den sonra)",
+      "type": "hauptsatz",
+      "usage": "Olumsuz cümleden sonra doğru seçeneği söyler. „nicht A, sondern B“.",
+      "examples": [
+        "Das ist nicht schwer, <strong>sondern</strong> einfach.",
+        "Er kommt nicht heute, <strong>sondern</strong> morgen.",
+        "Ich will keinen Kaffee, <strong>sondern</strong> Tee.",
+        "Sie arbeitet nicht in der Stadt, <strong>sondern</strong> zu Hause.",
+        "Wir fahren nicht mit dem Auto, <strong>sondern</strong> mit dem Zug.",
+        "Er ist nicht Lehrer, <strong>sondern</strong> Arzt.",
+        "Ich habe nicht angerufen, <strong>sondern</strong> eine E-Mail geschrieben."
+      ]
+    }
+  ]
+}

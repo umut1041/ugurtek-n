@@ -1,0 +1,176 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import conjData from "../../data/grammar/conjunctions.json";
+
+const { meta, sections } = conjData;
+const nebensatz = sections.filter((s: { type: string }) => s.type === "nebensatz");
+const hauptsatz = sections.filter((s: { type: string }) => s.type === "hauptsatz");
+---
+
+<MainLayout
+  title="Bağlaçlar (Konnektoren)"
+  description="Almanca bağlaçlar: dass, ob, weil, wenn, als, obwohl, damit ve daha fazlası — örnek cümlelerle kullanım."
+>
+  <section>
+    <p class="breadcrumb">
+      <a href="/grammar">Gramer</a> → Bağlaçlar (Konnektoren)
+    </p>
+    <h1>Bağlaçlar (Konnektoren)</h1>
+    <p class="konn-meta">
+      <strong>{meta.titleDe}</strong>. {meta.note}
+    </p>
+  </section>
+
+  <section class="konn-nav">
+    <h2>İçindekiler</h2>
+    <p class="konn-nav-label">Yan cümle bağlaçları (fiil sonda):</p>
+    <ul class="konn-nav-list">
+      {nebensatz.map((s: { id: string; name: string; nameTr: string }) => (
+        <li><a href={`#${s.id}`}>{s.name}</a> — {s.nameTr}</li>
+      ))}
+    </ul>
+    <p class="konn-nav-label">Sıralı bağlaçlar (fiil ikinci sırada):</p>
+    <ul class="konn-nav-list">
+      {hauptsatz.map((s: { id: string; name: string; nameTr: string }) => (
+        <li><a href={`#${s.id}`}>{s.name}</a> — {s.nameTr}</li>
+      ))}
+    </ul>
+  </section>
+
+  {sections.map((block: { id: string; name: string; nameTr: string; type: string; usage: string; examples: string[] }) => (
+    <section id={block.id} class="konn-block">
+      <h2>
+        <span class="konn-name">{block.name}</span>
+        <span class="konn-tr"> — {block.nameTr}</span>
+        {block.type === "nebensatz" && <span class="konn-badge">Yan cümle</span>}
+        {block.type === "hauptsatz" && <span class="konn-badge hauptsatz">Sıralı</span>}
+      </h2>
+      <p class="konn-usage">{block.usage}</p>
+      <p class="konn-examples-title">Örnekler:</p>
+      <ul class="konn-examples">
+        {block.examples.map((ex: string) => (
+          <li set:html={ex.replace(/\n/g, " ")} />
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      <a href="/grammar">Gramer ana sayfasına</a> dön, <a href="/grammar#nebensatz">weil/dass</a> bölümünü
+      tekrarla veya <a href="/vocabulary/verben-praepositionen">Verben mit Präpositionen</a> sayfasına bak.
+    </p>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .breadcrumb a:hover {
+    color: #0f172a;
+  }
+  .konn-meta {
+    margin-top: 0.5rem;
+    color: #334155;
+  }
+  .konn-nav {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .konn-nav h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+  .konn-nav-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    margin: 0.75rem 0 0.35rem 0;
+  }
+  .konn-nav-label:first-of-type {
+    margin-top: 0.5rem;
+  }
+  .konn-nav-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: #334155;
+  }
+  .konn-nav-list li {
+    margin-bottom: 0.25rem;
+  }
+  .konn-nav-list a {
+    font-weight: 600;
+    color: #0d9488;
+  }
+  .konn-nav-list a:hover {
+    text-decoration: underline;
+  }
+  .konn-block {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .konn-block:last-of-type {
+    border-bottom: none;
+  }
+  .konn-block h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+  .konn-name {
+    color: #0f172a;
+    font-family: ui-monospace, monospace;
+  }
+  .konn-tr {
+    color: #64748b;
+    font-weight: normal;
+  }
+  .konn-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    background: #ccfbf1;
+    color: #0d9488;
+  }
+  .konn-badge.hauptsatz {
+    background: #ede9fe;
+    color: #6d28d9;
+  }
+  .konn-usage {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 0.75rem;
+  }
+  .konn-examples-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.35rem;
+  }
+  .konn-examples {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #0f172a;
+  }
+  .konn-examples li {
+    margin-bottom: 0.4rem;
+  }
+  .konn-examples li :global(strong) {
+    color: #0d9488;
+  }
+</style>

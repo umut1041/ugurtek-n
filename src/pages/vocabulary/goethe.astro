@@ -1,0 +1,213 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import goetheData from "../../data/vocabulary/goethe-wordlist.json";
+
+const { meta, wordGroups, alphabetical } = goetheData;
+const groupKeys = Object.keys(wordGroups);
+const groupsWithItems = groupKeys.map((key) => ({
+  key,
+  items: (wordGroups as Record<string, string[]>)[key] || [],
+}));
+---
+
+<MainLayout
+  title="Goethe Kelime Listesi (A2)"
+  description="Goethe-Zertifikat A2 resmî sözcük listesi: kelime grupları ve alfabetik liste."
+>
+  <section>
+    <p class="breadcrumb">
+      <a href="/vocabulary">Kelime & Kalıplar</a> → Goethe Kelime Listesi
+    </p>
+    <h1>Goethe Kelime Listesi (A2)</h1>
+    <p class="goethe-meta">
+      <strong>{meta.title}</strong>. {meta.note}
+    </p>
+    <p class="goethe-source">
+      Kaynak: {meta.source}
+    </p>
+  </section>
+
+  <section>
+    <h2>Wortgruppen (Kelime Grupları)</h2>
+    <p>
+      Sınav talimatları, sayılar, renkler, meslekler, aile, ülkeler, okul ve zaman
+      ifadeleri gibi gruplar.
+    </p>
+    <div class="goethe-groups">
+      {groupsWithItems.map(({ key, items }) => (
+        <details class="goethe-group">
+          <summary>{key}</summary>
+          <ul class="goethe-group-list">
+            {items.map((item: string) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Alphabetischer Wortschatz (Alfabetik Sözcük Listesi)</h2>
+    <p>
+      Aşağıda arama yapabilirsin. Örnek cümleler tipik kullanımı gösterir.
+    </p>
+    <label for="goethe-search" class="visually-hidden">Kelime veya cümle içinde ara</label>
+    <input
+      id="goethe-search"
+      type="search"
+      class="goethe-search"
+      placeholder="Kelime veya örnek cümle içinde ara …"
+      autocomplete="off"
+    />
+    <div id="goethe-alphabetical" class="goethe-alphabetical">
+      {alphabetical.map((entry: { de: string; ex: string }) => (
+        <div class="goethe-entry" data-de={entry.de.toLowerCase()} data-ex={(entry.ex || "").toLowerCase()}>
+          <strong class="goethe-word">{entry.de}</strong>
+          {entry.ex && <span class="goethe-ex"> — {entry.ex}</span>}
+        </div>
+      ))}
+    </div>
+    <p class="goethe-count">
+      Toplam <strong>{alphabetical.length}</strong> girdi (alfabetik liste).
+    </p>
+  </section>
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      <a href="/vocabulary">Tema ünitelerine</a> dön veya <a href="/exam/lesen">Lesen</a> ile
+      okuma pratiği yap.
+    </p>
+  </section>
+
+  <script>
+    (function () {
+      const search = document.getElementById("goethe-search") as HTMLInputElement;
+      const container = document.getElementById("goethe-alphabetical");
+      if (!search || !container) return;
+
+      const entries = container.querySelectorAll(".goethe-entry");
+
+      function filter() {
+        const q = (search.value || "").trim().toLowerCase();
+        if (!q) {
+          entries.forEach((el) => (el as HTMLElement).style.display = "");
+          return;
+        }
+        entries.forEach((el) => {
+          const de = (el.getAttribute("data-de") || "").includes(q);
+          const ex = (el.getAttribute("data-ex") || "").includes(q);
+          (el as HTMLElement).style.display = de || ex ? "" : "none";
+        });
+      }
+
+      search.addEventListener("input", filter);
+      search.addEventListener("change", filter);
+    })();
+  </script>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .breadcrumb a:hover {
+    color: #0f172a;
+  }
+  .goethe-meta {
+    margin-top: 0.5rem;
+    color: #334155;
+  }
+  .goethe-source {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+  }
+  .goethe-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .goethe-group {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    overflow: hidden;
+  }
+  .goethe-group summary {
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  .goethe-group summary::-webkit-details-marker {
+    display: none;
+  }
+  .goethe-group summary::before {
+    content: "▶ ";
+    font-size: 0.7em;
+    margin-right: 0.35rem;
+  }
+  .goethe-group[open] summary::before {
+    content: "▼ ";
+  }
+  .goethe-group-list {
+    padding: 0.5rem 1rem 1rem 1.5rem;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #475569;
+  }
+  .goethe-group-list li {
+    margin-bottom: 0.2rem;
+  }
+  .goethe-search {
+    width: 100%;
+    max-width: 28rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  .goethe-search:focus {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+  }
+  .goethe-alphabetical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 32rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  .goethe-entry {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+  }
+  .goethe-word {
+    color: #0f172a;
+  }
+  .goethe-ex {
+    color: #475569;
+  }
+  .goethe-count {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>

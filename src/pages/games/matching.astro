@@ -1,0 +1,140 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import MatchingGame from "../../components/MatchingGame";
+import vocabData from "../../data/games/vocabulary.json";
+---
+
+<MainLayout
+  title="Kelime Eşleştirme Oyunu"
+  description="Türkçe ve Almanca kelimeleri eşleştirerek kelime bilgini pekiştir."
+>
+  <section>
+    <p class="breadcrumb">
+      <a href="/games">Oyunlar</a> → Kelime Eşleştirme
+    </p>
+    <h1>🔗 Kelime Eşleştirme</h1>
+    <p>
+      Almanca ve Türkçe kelimeleri eşleştir. Her doğru eşleşme puan kazandırır!
+    </p>
+  </section>
+
+  <section>
+    <MatchingGame client:load words={vocabData.matching} />
+  </section>
+
+  <section class="next-step">
+    <h2>Sonraki adım</h2>
+    <p>
+      <a href="/games">Diğer oyunlara</a> bak veya <a href="/vocabulary">Kelime & Kalıplar</a> sayfasından
+      yeni kelimeler öğren.
+    </p>
+  </section>
+</MainLayout>
+
+<style>
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+  .breadcrumb a:hover {
+    color: #0f172a;
+  }
+  .matching-game {
+    margin: 1.5rem 0;
+  }
+  .game-header {
+    margin-bottom: 1.5rem;
+  }
+  .game-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .game-stats strong {
+    color: #0d9488;
+    font-size: 1.1rem;
+  }
+  .game-complete {
+    background: #ecfdf5;
+    border: 2px solid #22c55e;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .game-complete h3 {
+    margin-top: 0;
+    color: #16a34a;
+  }
+  .reset-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  .reset-btn:hover {
+    background: #16a34a;
+  }
+  .matching-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  .matching-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #334155;
+  }
+  .matching-card {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+  }
+  .matching-card:hover:not(:disabled) {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+  }
+  .matching-card.selected {
+    background: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af;
+  }
+  .matching-card.matched {
+    background: #d1fae5;
+    border-color: #22c55e;
+    color: #065f46;
+    cursor: default;
+  }
+  .matching-card:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .game-instructions {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  @media (max-width: 640px) {
+    .matching-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
