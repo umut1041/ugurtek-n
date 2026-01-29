@@ -1,0 +1,42 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import GrammarQuiz from "../../components/GrammarQuiz";
+---
+
+<MainLayout
+  title="A2 Gramer Konuları"
+  description="Goethe A2 seviyesi için bilmen gereken temel Almanca gramer konuları."
+>
+  <section>
+    <h1>A2 Gramer Konuları</h1>
+    <p>
+      Bu bölümde Goethe A2 sınavı için bilmen gereken temel Almanca gramer
+      yapılarını bulacaksın.
+    </p>
+  </section>
+
+  <section class="cards-grid">
+    <a class="card" href="#zamanlar">
+      <h3>Zamanlar</h3>
+      <p>Präsens tekrar, Perfekt, sık kullanılan Präteritum fiiller ve Futur I.</p>
+    </a>
+    <a class="card" href="#modalverben">
+      <h3>Modalverb’ler</h3>
+      <p>können, müssen, wollen gibi fiilleri günlük hayatta kullanma.</p>
+    </a>
+    <a class="card" href="#nebensatz">
+      <h3>Yan Cümleler (weil/dass)</h3>
+      <p>Fiilin sona gittiği yan cümle yapıları.</p>
+    </a>
+    <a class="card" href="#kasus">
+      <h3>Akkusativ &amp; Dativ</h3>
+      <p>Temel hallerin tekrar edilmesi ve tipik preposition’lar.</p>
+    </a>
+  </section>
+
+  <section id="zamanlar">
+    <h2>Perfekt – Uygulamalı Quiz</h2>
+    <GrammarQuiz client:load />
+  </section>
+</MainLayout>
+

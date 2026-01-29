@@ -1,0 +1,27 @@
+{
+  "exercises": [
+    {
+      "id": "lesen-basic-1",
+      "text": "Sprachkurs A2\nMontag und Mittwoch, 18:00–19:30 Uhr.\nPreis: 180 Euro pro Monat.\nInformationen: info@sprachzentrum.de",
+      "questions": [
+        {
+          "id": "lesen-basic-1-q1",
+          "prompt": "Kurs ne zaman?",
+          "options": [
+            "Salı ve Perşembe",
+            "Pazartesi ve Çarşamba",
+            "Cumartesi ve Pazar"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "lesen-basic-1-q2",
+          "prompt": "Kursun ücreti ne kadar?",
+          "options": ["80 Euro", "180 Euro", "280 Euro"],
+          "correctIndex": 1
+        }
+      ]
+    }
+  ]
+}
+

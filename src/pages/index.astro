@@ -1,0 +1,73 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import GlobalProgressSummary from "../components/GlobalProgressSummary";
+---
+
+<MainLayout
+  title="Goethe A2 Hazırlık Portalı"
+  description="A1 temelinden Goethe A2 sınavını geçmeye odaklı, planlı ve etkileşimli hazırlık sitesi."
+>
+  <section>
+    <h1>Goethe A2 Hazırlık Portalı</h1>
+    <p>
+      Bu site, A1 seviyesini tamamlamış ve Goethe-Zertifikat A2 sınavını
+      geçmek isteyen öğrenciler için tasarlanmış yapılandırılmış bir çalışma
+      alanıdır.
+    </p>
+  </section>
+
+  <section>
+    <h2>Bu siteyi nasıl kullanmalısın?</h2>
+    <ol>
+      <li>
+        <strong>Önce çalışma planını seç:</strong> <a href="/plan">Plan</a>{" "}
+        sayfasına git ve hangi haftadan başlayacağını belirle.
+      </li>
+      <li>
+        <strong>Haftalık görevleri tamamla:</strong> Gramer, kelime ve sınav
+        odaklı görevleri sırayla işle, her görevi tamamladığında işaretle.
+      </li>
+      <li>
+        <strong>Kendini test et:</strong> Lesen, Schreiben ve Sprechen
+        sayfalarındaki örnek sınav görevleriyle gerçek sınava hazırlan.
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>İlerleme Özeti</h2>
+    <GlobalProgressSummary client:load />
+  </section>
+
+  <section class="cards-grid">
+    <a class="card" href="/plan">
+      <h3>Çalışma Planı</h3>
+      <p>8–12 haftalık yapılandırılmış bir program ile adım adım ilerle.</p>
+    </a>
+    <a class="card" href="/exam/lesen">
+      <h3>Lesen</h3>
+      <p>İlanlar, afişler ve kısa metinlerle okuma pratiği yap.</p>
+    </a>
+    <a class="card" href="/exam/schreiben">
+      <h3>Schreiben</h3>
+      <p>Tipik A2 e-posta/mektup görevleriyle yazma becerini geliştir.</p>
+    </a>
+    <a class="card" href="/exam/sprechen">
+      <h3>Sprechen</h3>
+      <p>Kendini tanıtma ve rol oyunu kartlarıyla konuşma pratiği yap.</p>
+    </a>
+    <a class="card" href="/grammar">
+      <h3>Gramer</h3>
+      <p>A2 seviyesinde bilmen gereken temel yapıları pekiştir.</p>
+    </a>
+    <a class="card" href="/vocabulary">
+      <h3>Kelime & Kalıplar</h3>
+      <p>Günlük hayatta ve sınavda sık kullanılan kelime ve kalıplar.</p>
+    </a>
+    <a class="card" href="/resources">
+      <h3>Kaynaklar & Strateji</h3>
+      <p>Resmi Goethe linkleri, çalışma ipuçları ve motivasyon.</p>
+    </a>
+  </section>
+</MainLayout>
+

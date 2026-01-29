@@ -1,0 +1,123 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import TaskCheckbox from "../../components/TaskCheckbox";
+import WeekCompletionBanner from "../../components/WeekCompletionBanner";
+import SidebarProgress from "../../components/SidebarProgress";
+import planData from "../../data/plan/structure.json";
+
+const { week } = Astro.params;
+
+type Week = (typeof planData.weeks)[number];
+const config: Week | undefined = planData.weeks.find((w) => w.id === week);
+const allTaskIds =
+  config &&
+  [
+    ...config.grammarTasks,
+    ...config.vocabTasks,
+    ...config.lesenTasks,
+    ...config.schreibenTasks,
+    ...config.sprechenTasks,
+  ].map((t) => t.id);
+
+export function getStaticPaths() {
+  return planData.weeks.map((value) => ({
+    params: { week: value.id },
+  }));
+}
+---
+
+<MainLayout
+  title={config ? config.title : "Çalışma Haftası"}
+  description="Goethe A2 hazırlık planı için haftalık görevler."
+>
+  {config ? (
+    <>
+      {allTaskIds && (
+        <WeekCompletionBanner
+          client:load
+          weekId={config.id}
+          taskIds={allTaskIds}
+        />
+      )}
+
+      {allTaskIds && (
+        <SidebarProgress
+          client:load
+          currentWeekId={config.id}
+          currentWeekTaskIds={allTaskIds}
+        />
+      )}
+
+      <section>
+        <h1>{config.title}</h1>
+        <h2>Bu haftanın hedefleri</h2>
+        <ul>
+          {config.goals.map((goal) => (
+            <li>{goal}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Gramer Görevleri</h2>
+        <ul>
+          {config.grammarTasks.map((task) => (
+            <li>
+              <TaskCheckbox client:load taskId={task.id} label={task.label} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kelime Görevleri</h2>
+        <ul>
+          {config.vocabTasks.map((task) => (
+            <li>
+              <TaskCheckbox client:load taskId={task.id} label={task.label} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Lesen Görevleri</h2>
+        <ul>
+          {config.lesenTasks.map((task) => (
+            <li>
+              <TaskCheckbox client:load taskId={task.id} label={task.label} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Schreiben Görevleri</h2>
+        <ul>
+          {config.schreibenTasks.map((task) => (
+            <li>
+              <TaskCheckbox client:load taskId={task.id} label={task.label} />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sprechen Görevleri</h2>
+        <ul>
+          {config.sprechenTasks.map((task) => (
+            <li>
+              <TaskCheckbox client:load taskId={task.id} label={task.label} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
+  ) : (
+    <section>
+      <h1>Hafta bulunamadı</h1>
+      <p>Lütfen geçerli bir hafta seçmek için çalışma planına geri dön.</p>
+      <a href="/plan">Çalışma Planına Dön</a>
+    </section>
+  )}
+</MainLayout>

@@ -1,0 +1,33 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import WritingTemplateViewer from "../../components/WritingTemplateViewer";
+---
+
+<MainLayout
+  title="Schreiben – Goethe A2 Yazma Bölümü"
+  description="Goethe A2 yazma bölümünde karşılaşacağın görevler, değerlendirme kriterleri ve kullanabileceğin e-posta şablonları."
+>
+  <section>
+    <h1>Schreiben – Yazma</h1>
+    <p>
+      A2 yazma bölümünde genellikle kısa bir e-posta/mektup yazman istenir.
+      Görev, belirtilen duruma uygun bilgileri içermeli ve temel yapıları doğru
+      kullanmalısın.
+    </p>
+  </section>
+
+  <section>
+    <h2>Tipik Görev Örnekleri</h2>
+    <ul>
+      <li>Kursa bilgi isteme e-postası yazma</li>
+      <li>Bir daveti kabul/ret etme e-postası yazma</li>
+      <li>Randevu isteği veya iptali</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Basit E-posta Şablonu</h2>
+    <WritingTemplateViewer client:load />
+  </section>
+</MainLayout>
+

@@ -1,0 +1,352 @@
+/* Temel reset ve tipografi */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f3f4f6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0f172a;
+  color: #e5e7eb;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.4);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  gap: 1.5rem;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #a7f3d0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.main-nav a:hover {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.site-main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  background: #0b1120;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+/* Başlıklar ve tipografi */
+h1,
+h2,
+h3 {
+  color: #0f172a;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+p {
+  margin: 0.25rem 0 0.5rem;
+}
+
+section + section {
+  margin-top: 1.5rem;
+}
+
+ol,
+ul {
+  padding-left: 1.2rem;
+}
+
+/* Kart ızgarası */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #22c55e;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.18);
+  text-decoration: none;
+}
+
+.card-link {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: #16a34a;
+}
+
+/* Progress bar ve özetler */
+.progress-summary {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #064e3b;
+}
+
+.progress-bar-outer {
+  width: 100%;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: #d1fae5;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  transition: width 0.3s ease;
+}
+
+.progress-note {
+  font-size: 0.8rem;
+  color: #047857;
+  margin-top: 0.25rem;
+}
+
+.sidebar-progress {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  font-size: 0.9rem;
+}
+
+/* Görev checkbox’ları */
+.task-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.task-checkbox input[type="checkbox"] {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 0.35rem;
+  border: 1px solid #9ca3af;
+}
+
+/* Hafta tamamlama banner’ı */
+.week-completion-banner {
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.95rem;
+}
+
+.primary-button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  filter: brightness(0.95);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Quiz ve eğitim bileşenleri */
+.exercise-list,
+.grammar-quiz,
+.writing-template-viewer,
+.speaking-carousel {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.85rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.exercise-text {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.6rem;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.exercise-questions li + li,
+.grammar-question + .grammar-question {
+  margin-top: 0.5rem;
+}
+
+.correct {
+  margin-left: 0.3rem;
+  color: #16a34a;
+  font-size: 0.85rem;
+}
+
+.incorrect {
+  margin-left: 0.3rem;
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+.explanation {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.writing-template .template-line {
+  margin: 0.15rem 0;
+}
+
+.speaking-carousel ul {
+  margin-top: 0.4rem;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.carousel-controls button {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 0.85rem;
+}
+
+.carousel-controls button:hover {
+  background: #e5e7eb;
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-main {
+    padding-top: 1rem;
+  }
+}
+

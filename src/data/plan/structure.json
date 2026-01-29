@@ -1,0 +1,84 @@
+{
+  "weeks": [
+    {
+      "id": "week-1",
+      "title": "Hafta 1 – Temel tekrar ve Perfekt",
+      "description": "A1 bilgisini tazeleyip Perfekt zamanı ile günlük rutin ve geçmiş aktiviteleri anlatma.",
+      "goals": [
+        "A1 temel cümle yapılarını hatırlamak",
+        "Perfekt zamanı ile geçmişte yaptıklarını anlatmak"
+      ],
+      "grammarTasks": [
+        { "id": "week1-grammar-perfekt-1", "label": "Perfekt zamanını öğren" },
+        {
+          "id": "week1-grammar-word-order-1",
+          "label": "Temel cümle dizilişini tekrar et"
+        }
+      ],
+      "vocabTasks": [
+        {
+          "id": "week1-vocab-daily-1",
+          "label": "Günlük rutin kelimelerini çalış"
+        }
+      ],
+      "lesenTasks": [
+        {
+          "id": "week1-lesen-shorttexts-1",
+          "label": "Kısa ilan ve e-posta metinlerini oku"
+        }
+      ],
+      "schreibenTasks": [
+        {
+          "id": "week1-schreiben-email-1",
+          "label": "Basit bir tanışma e-postası yaz"
+        }
+      ],
+      "sprechenTasks": [
+        {
+          "id": "week1-sprechen-intro-1",
+          "label": "Kendini tanıtma monoloğunu hazırla ve yüksek sesle oku"
+        }
+      ]
+    },
+    {
+      "id": "week-2",
+      "title": "Hafta 2 – Modalverb’ler ve günlük işler",
+      "description": "Modalverb’lerle zorunluluk, imkan ve istek ifade etme; iş ve kurs hayatına dair görevler.",
+      "goals": [
+        "Modalverb’lerle zorunluluk, imkan ve istek ifade etmek",
+        "Günlük yapılacak işleri planlamak"
+      ],
+      "grammarTasks": [
+        {
+          "id": "week2-grammar-modal-1",
+          "label": "können, müssen, wollen fiillerini kullan"
+        }
+      ],
+      "vocabTasks": [
+        {
+          "id": "week2-vocab-work-1",
+          "label": "İş ve kurs ile ilgili kelimeleri öğren"
+        }
+      ],
+      "lesenTasks": [
+        {
+          "id": "week2-lesen-schedule-1",
+          "label": "Ders programı ve ilanları oku"
+        }
+      ],
+      "schreibenTasks": [
+        {
+          "id": "week2-schreiben-request-1",
+          "label": "Kursa bilgi isteme e-postası yaz"
+        }
+      ],
+      "sprechenTasks": [
+        {
+          "id": "week2-sprechen-dialog-1",
+          "label": "Kurs ofisiyle randevu alma diyaloğu canlandır"
+        }
+      ]
+    }
+  ]
+}
+

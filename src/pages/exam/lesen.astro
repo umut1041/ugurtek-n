@@ -1,0 +1,32 @@
+
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ExerciseList from "../../components/ExerciseList";
+---
+
+<MainLayout
+  title="Lesen – Goethe A2 Okuma Bölümü"
+  description="Goethe A2 okuma bölümünün yapısı, soru tipleri ve örnek okuma alıştırmaları."
+>
+  <section>
+    <h1>Lesen – Okuma</h1>
+    <p>
+      A2 Lesen bölümünde ilanlar, kısa metinler, e-postalar ve basit internet
+      sayfaları gibi günlük metinleri anlama becerin ölçülür.
+    </p>
+  </section>
+
+  <section>
+    <h2>Tipik Soru Türleri</h2>
+    <ul>
+      <li>Kısa ilan ve afişlerden bilgi çekme</li>
+      <li>Kısa e-postalarda kim, ne, ne zaman, nerede gibi bilgileri bulma</li>
+      <li>Kısa metinlere doğru/yanlış/cevap yok soruları</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Örnek Okuma Görevi</h2>
+    <ExerciseList client:load />
+  </section>
+</MainLayout>

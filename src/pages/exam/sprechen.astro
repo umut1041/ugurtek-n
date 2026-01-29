@@ -1,0 +1,32 @@
+
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import SpeakingCardCarousel from "../../components/SpeakingCardCarousel";
+---
+
+<MainLayout
+  title="Sprechen – Goethe A2 Konuşma Bölümü"
+  description="Goethe A2 konuşma bölümünün akışı, kendini tanıtma ve rol oyunu kartları."
+>
+  <section>
+    <h1>Sprechen – Konuşma</h1>
+    <p>
+      A2 Sprechen bölümünde kendini tanıtma, soru-cevap ve bir partnerle kısa
+      rol oyunu yapman beklenir.
+    </p>
+  </section>
+
+  <section>
+    <h2>Bölüm Yapısı</h2>
+    <ul>
+      <li>Kendini tanıtma (isim, yaş, memleket, meslek, hobiler vb.)</li>
+      <li>Karttaki sorulara cevap verme ve soru sorma</li>
+      <li>Günlük hayata dair kısa bir durumu canlandırma (örneğin kursa kayıt)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Örnek Soru Kartları</h2>
+    <SpeakingCardCarousel client:load />
+  </section>
+</MainLayout>

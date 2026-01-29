@@ -1,0 +1,45 @@
+---
+const { title = "Goethe A2 Hazırlık", description = "" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="branding">
+          <a href="/" class="logo">Goethe A2</a>
+          <span class="subtitle">A1'den A2 sınavına adım adım</span>
+        </div>
+        <nav class="main-nav">
+          <a href="/plan">Plan</a>
+          <a href="/exam">Sınav</a>
+          <a href="/grammar">Gramer</a>
+          <a href="/vocabulary">Kelime</a>
+          <a href="/resources">Kaynaklar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© {new Date().getFullYear()} Goethe A2 Hazırlık</span>
+        <span>Bu site UĞUR TEKİN EĞİTİM KURUMLARI tarafından hazırlanmıştır.</span>
+      </div>
+    </footer>
+  </body>
+</html>
+

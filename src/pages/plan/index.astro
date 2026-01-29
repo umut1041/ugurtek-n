@@ -1,0 +1,32 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import planData from "../../data/plan/structure.json";
+
+type Week = (typeof planData.weeks)[number];
+const weeks: Week[] = planData.weeks;
+---
+
+<MainLayout
+  title="Çalışma Planı"
+  description="Goethe A2 sınavına hazırlık için haftalık yapılandırılmış çalışma planı."
+>
+  <section>
+    <h1>Çalışma Planı</h1>
+    <p>
+      Aşağıdaki plan, A1 düzeyindeki temelini A2 Goethe sınavını geçecek seviyeye
+      taşımak için haftalık hedefler sunar. Her haftada gramer, kelime ve sınav
+      odaklı görevler bulunur.
+    </p>
+  </section>
+
+  <section class="cards-grid">
+    {weeks.map((week) => (
+      <a href={`/plan/${week.id}`} class="card">
+        <h3>{week.title}</h3>
+        <p>{week.description}</p>
+        <span class="card-link">Hafta sayfasına git →</span>
+      </a>
+    ))}
+  </section>
+</MainLayout>
+

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "perfekt-1",
+      "prompt": "Gestern ____ ich meine Hausaufgaben gemacht.",
+      "options": ["habe", "bin", "hat"],
+      "correctIndex": 0,
+      "explanation": "\"machen\" fiili Perfekt'te \"haben\" yardımcı fiiliyle kullanılır."
+    },
+    {
+      "id": "perfekt-2",
+      "prompt": "Letztes Jahr ____ wir nach Berlin gefahren.",
+      "options": ["haben", "sein", "hat"],
+      "correctIndex": 1,
+      "explanation": "Yönelme içeren hareket fiilleri (fahren, gehen vb.) genelde \"sein\" ile kullanılır."
+    }
+  ]
+}
+

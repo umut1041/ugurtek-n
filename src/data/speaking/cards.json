@@ -1,0 +1,24 @@
+{
+  "cards": [
+    {
+      "id": "intro-1",
+      "title": "Kendini tanıt",
+      "prompts": [
+        "Wie heißen Sie?",
+        "Woher kommen Sie?",
+        "Was sind Sie von Beruf?",
+        "Was sind Ihre Hobbys?"
+      ]
+    },
+    {
+      "id": "appointment-1",
+      "title": "Randevu alma",
+      "prompts": [
+        "Rufen Sie beim Arzt an.",
+        "Fragen Sie nach einem Termin.",
+        "Sagen Sie, wann Sie Zeit haben."
+      ]
+    }
+  ]
+}
+

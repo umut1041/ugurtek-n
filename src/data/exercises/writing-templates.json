@@ -1,0 +1,25 @@
+{
+  "templates": [
+    {
+      "id": "email-course-info",
+      "context": "Kursa bilgi isteme e-postası",
+      "salutation": "Sehr geehrte Damen und Herren,",
+      "body": [
+        "ich interessiere mich für Ihren Deutschkurs A2.",
+        "Könnten Sie mir bitte Informationen zu Terminen und Preisen schicken?"
+      ],
+      "closing": "Mit freundlichen Grüßen"
+    },
+    {
+      "id": "email-invitation-accept",
+      "context": "Daveti kabul etme",
+      "salutation": "Liebe / Lieber ... ,",
+      "body": [
+        "vielen Dank für deine Einladung.",
+        "Ich komme sehr gern und freue mich auf das Treffen."
+      ],
+      "closing": "Viele Grüße"
+    }
+  ]
+}
+
